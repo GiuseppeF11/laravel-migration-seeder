@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('departure_station',64);
             $table->date('arrival_time');
             $table->string('arrival_station',64);
-            $table->mediumInteger('train_code')->unsigned();
+            $table->string('codice_treno',100);
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 //Models
 use App\Models\Train;
+//use Faker\Generator as Faker;
 
 class TrainSeeder extends Seeder
 {
@@ -22,11 +23,13 @@ class TrainSeeder extends Seeder
             $train = new Train();
             // Ne riempio le colonne
             $train->company = fake()->words(rand(1, 3), true);
-            $train->departure_time = fake()->time();
+            $train->cancelled = false;
+            $train->departure_time = fake()->date();
             $train->departure_station = fake()->city();
-            $train->arrival_time = fake()->time();
+            $train->arrival_time = fake()->date();
             $train->arrival_station = fake()->city();
-            $train->train_code = fake()->randomNumber(8, true);
+            $train->codice_treno = fake()->words(rand(1, 3), true);
+
             // Lo salvo in persistenza
             $train->save();
         }
