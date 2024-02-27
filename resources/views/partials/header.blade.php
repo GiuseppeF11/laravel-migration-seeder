@@ -10,15 +10,11 @@
             'label' => 'Chi siamo',
             'active' => true,
         ],
-        [
-            'url' => '/contatti',
-            'label' => 'Contatti',
-            'active' => false,
-        ],
     ];
 @endphp
 
 <header>
+    <h1>HEADER</h1>
     <nav>
         <ul>
             @foreach ($links as $link)
