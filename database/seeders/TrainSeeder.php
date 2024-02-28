@@ -21,7 +21,7 @@ class TrainSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             // Istanzio il model
             $train = new Train();
-            
+
             // Ne riempio le colonne
             $train->company = fake()->words(rand(1, 3), true);
             $train->cancelled = false;
@@ -31,6 +31,7 @@ class TrainSeeder extends Seeder
             $train->arrival_date = fake()->date();
             $train->arrival_time = fake()->time();
             $train->arrival_station = fake()->city();
+            $train->price = fake()->randomNumber(3, false);
             $train->train_code = fake()->regexify('[A-Z]{5}[0-4]{3}');
 
             // Lo salvo in persistenza

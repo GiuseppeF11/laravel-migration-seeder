@@ -12,8 +12,8 @@
             <a href="/trains" class="btn btn-danger ">
                 Torna alla lista
             </a>
-            <div class="row">
-                <div class="col-12 col-sm-3 mb-3 ">
+            <div class="row d-flex justify-content-center">
+                <div class="col-5 mb-3 ">
                     <div class="card p-2">
                         <h3>
                             {{ $train->date }}
@@ -25,8 +25,14 @@
                             <strong>Arrival:</strong> {{ $train->arrival_station }} - {{ $train->arrival_date }} - {{ $train->arrival_time }}
                         <p>
                         <p>
+                            <strong>Price:</strong> {{ $train->price }}€
+                        </p>
+                        <p>
                            <strong>Train Code:</strong> {{ $train->train_code }}
                         </p>
+                        <button class="btn btn-danger">
+                            Acquista biglietto
+                        </button>
                     </div>
                 </div>
             </div>

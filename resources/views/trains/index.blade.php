@@ -26,6 +26,9 @@
                                 {{ $train->arrival_date }} - 
                                 {{ $train->arrival_time }}
                             </p>
+                            <p>
+                                <strong>Price:</strong> {{ $train->price }}€
+                            </p>
                             @if ($train->cancelled == true)
                                 <h4>
                                     TRENO CANCELLATO!

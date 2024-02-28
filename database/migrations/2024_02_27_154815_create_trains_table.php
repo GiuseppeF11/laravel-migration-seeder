@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('arrival_date');
             $table->time('arrival_time');
             $table->string('arrival_station',64);
+            $table->integer('price');
             $table->string('train_code',100);
             $table->timestamps();
         });
