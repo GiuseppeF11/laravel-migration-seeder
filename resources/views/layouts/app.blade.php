@@ -16,7 +16,6 @@
     </head>
     <body>
 
-        @include('partials.header')
 
         <main>
 
@@ -24,7 +23,6 @@
 
         </main>
 
-        @include('partials.footer')
 
         {{-- JS da importare nel body --}}
         @yield('body-imports')
