@@ -28,6 +28,17 @@
                             <strong>Price:</strong> {{ $train->price }}€
                         </p>
                         <p>
+                            @if ($train->cancelled == true)
+                                @else
+                                <strong>Status:</strong> 
+                                @if ($train->on_time == true)
+                                    Treno in orario
+                                    @else
+                                    Treno in ritardo
+                                @endif
+                            @endif
+                        </p>
+                        <p>
                            <strong>Train Code:</strong> {{ $train->train_code }}
                         </p>
                         <button class="btn btn-danger">

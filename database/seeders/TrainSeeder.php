@@ -16,7 +16,7 @@ class TrainSeeder extends Seeder
      */
     public function run(): void
     {
-        Train::truncate();
+        Train::truncate(); //Svuota la tabella dalle righe prima di eseguire il seeder
 
         for ($i = 0; $i < 10; $i++) {
             // Istanzio il model
@@ -24,7 +24,7 @@ class TrainSeeder extends Seeder
 
             // Ne riempio le colonne
             $train->company = fake()->words(rand(1, 3), true);
-            $train->cancelled = false;
+            $train->cancelled = fake()->boolean(20);
             $train->departure_date = fake()->date();
             $train->departure_time = fake()->time();
             $train->departure_station = fake()->city();
@@ -32,7 +32,9 @@ class TrainSeeder extends Seeder
             $train->arrival_time = fake()->time();
             $train->arrival_station = fake()->city();
             $train->price = fake()->randomNumber(3, false);
-            $train->train_code = fake()->regexify('[A-Z]{5}[0-4]{3}');
+            $train->carriages_num = rand(2, 10);
+            $train->train_code = fake()->unique()->regexify('[A-Z]{2}[0-4]{5}');
+            $train->on_time = fake()->boolean(20);
 
             // Lo salvo in persistenza
             $train->save();
